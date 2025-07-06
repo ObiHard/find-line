@@ -1,15 +1,14 @@
-def second_index(text, some_str):
-    count = 0
-    start = 0
+def second_index(text: str, some_str: str) -> int | None:
+    count: int = 0
+    start: int = 0
     while True:
-        pos = text.find(some_str, start)
+        pos: int = text.find(some_str, start)
         if pos == -1:
             return None
         count += 1
         if count == 2:
             return pos
-        start = pos + 2
-
+        start = pos + len(some_str)
 assert second_index("sims", "s") == 3, 'Test1'
 assert second_index("find the river", "e") == 12, 'Test2'
 assert second_index("hi", "h") is None, 'Test3'
